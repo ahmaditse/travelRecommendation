@@ -2,19 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TravelBloom</title>
+    <title>Travel Recommendations</title>
     <link rel="stylesheet" href="style.css">
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+document.getElementById("searchBtn").addEventListener("click", function () {
+
+    // Get user input
+    let keyword = document.getElementById("searchInput").value.trim().toLowerCase();
+    let resultsBox = document.getElementById("searchResults");
+
+    resultsBox.innerHTML = "";
+
+    if (keyword === "") {
+        resultsBox.innerHTML = "<p>Please enter a valid search query.</p>";
+        return;
+    }
+
+    // Keyword matching logic
+    if (keyword === "beach" || keyword === "beaches") {
+        resultsBox.innerHTML = `
+            <h3>Beach Destinations</h3>
+            <ul>
+                <li>Maldives</li>
+                <li>Bali</li>
+                <li>Miami</li>
+            </ul>
+        `;
+    }
+    else if (keyword === "temple" || keyword === "temples") {
+        resultsBox.innerHTML = `
+            <h3>Famous Temples</h3>
+            <ul>
+                <li>Angkor Wat</li>
+                <li>Golden Temple</li>
+                <li>Meenakshi Temple</li>
+            </ul>
+        `;
+    }
+    else if (keyword === "country" || keyword === "countries") {
+        resultsBox.innerHTML = `
+            <h3>Popular Countries</h3>
+            <ul>
+                <li>Japan</li>
+                <li>France</li>
+                <li>Italy</li>
+            </ul>
+        `;
+    }
+    else {
+        resultsBox.innerHTML = "<p>No results found for your search.</p>";
+    }
+});
+
+// Clear button
+document.getElementById("clearBtn").addEventListener("click", function () {
+    document.getElementById("searchInput").value = "";
+    document.getElementById("searchResults").innerHTML = "";
+});
+</script>
+
 </head>
 <body>
 
 <!-- Header / Navigation -->
 <header class="navbar">
     <div class="logo">
-        <i class="fa-solid fa-plane"></i> TravelBloom
+        <i class="fa-solid fa-plane"></i> Travel
     </div>
 
     <nav>
@@ -23,11 +80,13 @@
         <a href="#">Contact Us</a>
     </nav>
 
-    <div class="search-box">
-        <input type="text" placeholder="Enter a destination or keyword">
-        <button><i class="fa fa-search"></i></button>
-        <button class="clear">Clear</button>
-    </div>
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Enter a destination or keyword">
+    <button id="searchBtn"><i class="fa fa-search"></i></button>
+    <button class="clear" id="clearBtn">Clear</button>
+</div>
+<div id="searchResults" class="search-results"></div>
+
 </header>
 
 <!-- Social Icons -->
