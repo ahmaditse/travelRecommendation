@@ -95,4 +95,108 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url("https://images.unsplash.com/photo-1467269204594-9661b134dd2
+    background: url("https://images.unsplash.com/photo-1467269204594-9661b134dd2")
+        }
+/* Active Nav */
+.navbar nav .active {
+    text-decoration: underline;
+}
+
+/* About Hero */
+.about-hero {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1467269204594-9661b134dd2b")
+        no-repeat center center/cover;
+    position: relative;
+    color: #fff;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    padding: 140px 80px;
+}
+
+/* About Heading */
+.about-content h1 {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+/* About Text Box */
+.about-text {
+    max-width: 900px;
+    border: 4px solid red; /* remove after design final */
+    padding: 20px;
+    margin-bottom: 60px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* Team Section */
+.team-section {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    border: 4px solid red; /* remove later */
+    padding: 30px;
+}
+
+.team-section h2 {
+    font-size: 50px;
+    line-height: 1.1;
+}
+
+/* Team Cards */
+.team-cards {
+    display: flex;
+    gap: 30px;
+}
+
+.team-card {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 25px;
+    width: 230px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background: #0aa;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-card h3 {
+    margin: 10px 0 5px;
+}
+
+.team-card p {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+/* Role Button */
+.role {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #2c4c9c;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .team-section {
+        flex-direction: column;
+    }
+
+    .team-cards {
+        flex-direction: column;
+    }
+}
