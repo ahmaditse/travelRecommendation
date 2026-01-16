@@ -4,7 +4,64 @@
     <meta charset="UTF-8">
     <title>Travel Recommendations</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="travel_recommendation.js">
+    <script src="travel_recommendation.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const searchBtn = document.getElementById("searchBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+
+    let travelData = [];
+
+    // Fetch JSON file
+    fetch("travel_recommendation_api.json")
+        .then(response => response.json())
+        .then(data => {
+            travelData = data; // store JSON data
+            console.log("Travel data loaded:", travelData);
+        })
+        .catch(error => console.error("Error loading JSON:", error));
+
+    // Search functionality
+    searchBtn.addEventListener("click", () => {
+        const query = searchInput.value.toLowerCase();
+        const filtered = travelData.filter(item =>
+            item.name.toLowerCase().includes(query) ||
+            item.description.toLowerCase().includes(query)
+        );
+
+        displayResults(filtered);
+    });
+
+    // Clear search
+    clearBtn.addEventListener("click", () => {
+        searchInput.value = "";
+        searchResults.innerHTML = "";
+    });
+
+    // Display results
+    function displayResults(results) {
+        searchResults.innerHTML = "";
+        if (results.length === 0) {
+            searchResults.innerHTML = "<p>No results found.</p>";
+            return;
+        }
+
+        results.forEach(item => {
+            const card = document.createElement("div");
+            card.className = "rec-card";
+            card.innerHTML = `
+                <h3>${item.name}</h3>
+                <img src="${item.image}" alt="${item.name}">
+                <p>${item.description}</p>
+            `;
+            searchResults.appendChild(card);
+        });
+    }
+});
+
+</script>
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet"
