@@ -26,14 +26,14 @@
     {
   "name": "France",
   "category": "country",
-  "imageUrl": "country1.jpg",
+  "imageUrl": "country2.jpg",
   "description": "Famous for art, fashion, and culture.",
   "timeZone": "Europe/Paris"
 },
 {
   "name": "Japan",
   "category": "country",
-  "imageUrl": "country2.jpg",
+  "imageUrl": "country1.jpg",
   "description": "Blend of tradition and modern life.",
   "timeZone": "Asia/Tokyo"
 }
