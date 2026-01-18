@@ -18,17 +18,24 @@ function searchPlaces() {
         item.category.toLowerCase().includes(keyword)
     );
 
-    filtered.forEach(place => {
-        resultsDiv.innerHTML += `
-            <div class="card">
-                <img src="${place.imageUrl}">
-                <div>
-                    <h3>${place.name}</h3>
-                    <p>${place.description}</p>
-                </div>
+filtered.forEach(place => {
+
+    let timeInfo = "";
+    if (place.timeZone) {
+        timeInfo = `<p><strong>Local Time:</strong> ${getCountryTime(place.timeZone)}</p>`;
+    }
+
+    resultsDiv.innerHTML += `
+        <div class="card">
+            <img src="${place.imageUrl}">
+            <div>
+                <h3>${place.name}</h3>
+                <p>${place.description}</p>
+                ${timeInfo}
             </div>
-        `;
-    });
+        </div>
+    `;
+});
 }
 
 function clearResults() {
