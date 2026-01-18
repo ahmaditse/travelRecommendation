@@ -35,3 +35,13 @@ function clearResults() {
     document.getElementById("results").innerHTML = "";
     document.getElementById("searchInput").value = "";
 }
+function getCountryTime(timeZone) {
+    const options = {
+        timeZone: timeZone,
+        hour12: true,
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    };
+    return new Date().toLocaleTimeString('en-US', options);
+}
