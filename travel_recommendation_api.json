@@ -2,38 +2,38 @@
     {
         "name": "Maldives Beach",
         "category": "beach",
-        "imageUrl": "images/beach1.jpg",
+        "imageUrl": "beach1.jpg",
         "description": "Crystal clear water and white sandy beaches."
     },
     {
         "name": "Bali Beach",
         "category": "beach",
-        "imageUrl": "images/beach2.jpg",
+        "imageUrl": "beach2.jpg",
         "description": "Beautiful sunsets and tropical vibes."
     },
     {
         "name": "Angkor Wat",
         "category": "temple",
-        "imageUrl": "images/temple1.jpg",
+        "imageUrl": "temple1.jpg",
         "description": "Ancient temple complex in Cambodia."
     },
     {
         "name": "Golden Temple",
         "category": "temple",
-        "imageUrl": "images/temple2.jpg",
+        "imageUrl": "temple2.jpg",
         "description": "Spiritual landmark in India."
     },
     {
   "name": "France",
   "category": "country",
-  "imageUrl": "images/country1.jpg",
+  "imageUrl": "country1.jpg",
   "description": "Famous for art, fashion, and culture.",
   "timeZone": "Europe/Paris"
 },
 {
   "name": "Japan",
   "category": "country",
-  "imageUrl": "images/country2.jpg",
+  "imageUrl": "country2.jpg",
   "description": "Blend of tradition and modern life.",
   "timeZone": "Asia/Tokyo"
 }
